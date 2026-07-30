@@ -40,7 +40,7 @@ function Register() {
 
         try {
 
-            const response = await fetch("http://localhost:8080/userservice/create", {
+            const response = await fetch("http://localhost:8081/userservice/create", {
 
                 method: "POST",
 

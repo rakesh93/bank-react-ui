@@ -22,7 +22,7 @@ function Login() {
 
         try {
 
-            const response = await fetch("http://localhost:8081/authservice/login", {
+            const response = await fetch("http://localhost:8082/authservice/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -34,10 +34,9 @@ function Login() {
 
             if (data.statusCode === 200) {
                 // Save JWT Token
-                localStorage.setItem("token", data.token);
-                alert(data.message);
+                //localStorage.setItem("token", data.token);
                 // Redirect to Dashboard
-                navigate("/dashboard");
+                navigate("/account-search");
 
             } else {
 
@@ -61,7 +60,7 @@ function Login() {
 
             <div className="login-box">
 
-                <h2>User Login</h2>
+                <h2>Admin Login</h2>
 
                 <form onSubmit={handleSubmit}>
 

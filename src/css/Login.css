@@ -1,3 +1,7 @@
+/* ==========================
+   Global Styles
+========================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,61 +11,57 @@
 
 body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
-
-    background: linear-gradient(135deg,
-            #667eea 0%,
-            #764ba2 35%,
-            #6dd5fa 70%,
-            #2980b9 100%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 35%,
+        #6dd5fa 70%,
+        #2980b9 100%
+    );
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
+/* ==========================
+   Login Container
+========================== */
 
 .login-container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-.login-box {
+/* ==========================
+   Login Card
+========================== */
 
-    width: 620px;
-    padding: 80px;
+.login-box {
+    width: 100%;
+    max-width: 620px;
 
     background: rgba(255, 255, 255, 0.95);
+
+    padding: 50px;
 
     border-radius: 20px;
 
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 
     backdrop-filter: blur(10px);
-
 }
 
 .login-box h2 {
     text-align: center;
     color: #1565C0;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 36px;
 }
+
+/* ==========================
+   Form
+========================== */
 
 .form-group {
     margin-bottom: 20px;
@@ -70,16 +70,21 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
+    font-size: 16px;
     font-weight: 600;
+    color: #333;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
+    font-size: 16px;
+
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
+    border-radius: 10px;
+
     outline: none;
+
     transition: 0.3s;
 }
 
@@ -88,52 +93,131 @@ body {
     box-shadow: 0 0 8px rgba(21, 101, 192, 0.4);
 }
 
-button {
+/* ==========================
+   Button
+========================== */
 
+button {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
+
     border: none;
     border-radius: 10px;
-    font-size: 17px;
+
+    font-size: 18px;
+    font-weight: bold;
+
     color: white;
+
     cursor: pointer;
+
     background: linear-gradient(90deg, #300adc, #6dd5ed);
+
     transition: 0.3s;
 }
 
 button:hover {
-
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(234, 11, 3, 0.25);
-
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.register {
-    text-align: center;
+/* ==========================
+   Register Link
+========================== */
+
+.register,
+.register-link {
     margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
 }
 
-.register a {
-    text-decoration: none;
+.register a,
+.register-link a {
     color: #1565C0;
+    text-decoration: none;
     font-weight: bold;
 }
 
-.register a:hover {
+.register a:hover,
+.register-link a:hover {
     text-decoration: underline;
 }
 
-.register-link{
-    text-align:center;
-    margin-top:15px;
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 768px) {
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-box {
+        max-width: 100%;
+        padding: 35px;
+    }
+
+    .login-box h2 {
+        font-size: 30px;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+
+    .form-group input {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 16px;
+    }
 }
 
-.register-link a{
-    text-decoration:none;
-    color:#1565C0;
-    font-weight:bold;
-}
+/* ==========================
+   Mobile
+========================== */
 
-.register-link a:hover{
-    text-decoration:underline;
+@media (max-width: 480px) {
+
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-box {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .login-box h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .register,
+    .register-link {
+        font-size: 14px;
+    }
 }

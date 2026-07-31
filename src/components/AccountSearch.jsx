@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/AccountSearch.css";
 import Login from "./Login";
@@ -6,6 +6,7 @@ import Login from "./Login";
 function AccountSearch() {
 
     const [accountNumber, setAccountNumber] = useState("");
+    const [username, setUsername] = useState("");
     const navigate = useNavigate();
     const logout = () => {
         // Remove token later when JWT is implemented
@@ -13,6 +14,10 @@ function AccountSearch() {
         navigate("/login");
 
     };
+
+    useEffect(() => {
+        setUsername(localStorage.getItem("username"));
+    }, []);
     const handleSearch = async () => {
 
         if (accountNumber.trim() === "") {
@@ -60,6 +65,9 @@ function AccountSearch() {
     return (
 
         <div className="search-container">
+            <div className="welcome-user">
+                👋 Welcome, {username}
+            </div>
             <div className="top-bar">
 
                 <button className="logout-btn" onClick={logout}>
@@ -94,7 +102,7 @@ function AccountSearch() {
             </div>
 
         </div>
-    );    
+    );
 }
 
 

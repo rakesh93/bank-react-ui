@@ -4,6 +4,7 @@ import Register from "./components/Register";
 import AccountSearch from "./components/AccountSearch";
 import AccountDetails from "./components/AccountDetails";
 import CreateAccount from "./components/CreateAccount";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/account-search" element={<AccountSearch />} />
         <Route path="/account-details" element={<AccountDetails />} />
-        <Route path="/create-account"  element={<CreateAccount />}
-        />
+        <Route path="/create-account"  element={<CreateAccount />} />
+        <Route path="/forgot-password"  element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
   );

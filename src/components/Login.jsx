@@ -2,6 +2,7 @@ import "../css/Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import AppConstants from "../config/AppConstants.js";
 
 function Login() {
 
@@ -23,7 +24,7 @@ function Login() {
 
         try {
 
-            const response = await fetch("http://localhost:8082/authservice/login", {
+            const response = await fetch(AppConstants.AUTH_SERVICE.LOGIN_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -81,7 +82,7 @@ function Login() {
 
                             <input
                                 type="text"
-                                placeholder="Enter Username"
+                                placeholder="Please Enter Username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 required
@@ -97,7 +98,7 @@ function Login() {
 
                                 <input
                                     type={showPassword ? "text" : "password"}
-                                    placeholder="Enter Password"
+                                    placeholder="Please Enter Password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -125,6 +126,12 @@ function Login() {
                             If you forgot your password ?
                             <Link to="/forgot-password"> Reset Password</Link>
                         </div>
+
+                        <div className="register-link">
+                            If you forgot your username ?
+                            <Link to="/forgot-username"> Recover Username</Link>
+                        </div>
+
                         <div className="register-link">
                             Don't have an account?
                             <Link to="/register"> Register</Link>

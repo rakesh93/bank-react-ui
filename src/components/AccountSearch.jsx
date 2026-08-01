@@ -8,11 +8,9 @@ function AccountSearch() {
     const [accountNumber, setAccountNumber] = useState("");
     const [username, setUsername] = useState("");
     const navigate = useNavigate();
-    const logout = () => {
-        // Remove token later when JWT is implemented
-        //localStorage.clear();
-        navigate("/login");
 
+    const logout = () => {
+        navigate("/login");
     };
 
     useEffect(() => {

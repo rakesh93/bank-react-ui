@@ -8,12 +8,11 @@ function AccountDetails() {
     const navigate = useNavigate(); 
     const location = useLocation();
     const account = location.state?.result;
-    const logout = () => {
-        // Remove token later when JWT is implemented
-        //localStorage.clear();
-        navigate("/login");
 
+    const logout = () => {
+        navigate("/login");
     };
+    
     if (!account) {
         return <h2>No Account Details Found</h2>;
     }

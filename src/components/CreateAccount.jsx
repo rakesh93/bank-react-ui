@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/CreateAccount.css";
+import AppConstants from "../config/AppConstants.js";
 
 function CreateAccount() {
 
@@ -25,8 +26,7 @@ function CreateAccount() {
 
         try {
 
-            const response = await fetch(
-                "http://localhost:8083/accountservice/createAccount",
+            const response = await fetch(AppConstants.ACCOUNT_SERVICE.CREATE_API,
                 {
                     method: "POST",
                     headers: {

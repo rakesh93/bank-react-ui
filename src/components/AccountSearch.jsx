@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/AccountSearch.css";
 import Login from "./Login";
+import AppConstants from "../config/AppConstants.js";
 
 function AccountSearch() {
 
@@ -25,8 +26,8 @@ function AccountSearch() {
 
         try {
 
-            const response = await fetch(
-                `http://localhost:8083/accountservice/getAccount/${accountNumber}`,
+            const response = await fetch(AppConstants.ACCOUNT_SERVICE.SEARCH_API + accountNumber
+                ,
                 {
                     method: "GET",
                     headers: {
@@ -46,16 +47,12 @@ function AccountSearch() {
                 });
 
             } else {
-
                 alert(data.message || "Account Not Found");
-
             }
 
         } catch (error) {
-
             console.error(error);
             alert("Unable to connect to server.");
-
         }
 
     };

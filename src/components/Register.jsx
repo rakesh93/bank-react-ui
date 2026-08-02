@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../css/Register.css";
 import { useNavigate, Link } from "react-router-dom";
+import AppConstants from "../config/AppConstants.js";
+import { FaArrowLeft } from "react-icons/fa";
 
 function Register() {
     const navigate = useNavigate();
@@ -40,7 +42,7 @@ function Register() {
 
         try {
 
-            const response = await fetch("http://localhost:8081/userservice/create", {
+            const response = await fetch(AppConstants.USER_SERVICE.REGISTER_API, {
 
                 method: "POST",
 
@@ -79,13 +81,18 @@ function Register() {
     };
 
     return (
-
         <div className="register-container">
-
+            <button
+                type="button"
+                className="reg-back-btn"
+                onClick={() => navigate("/login")}
+            >
+                <FaArrowLeft className="reg-back-icon" />
+                <span>Back</span>
+            </button>
             <div className="register-box">
 
                 <h2>User Registration</h2>
-
                 {message && (
                     <div className={messageType === "success" ? "success-message" : "error-message"}>
                         {message}
@@ -93,7 +100,6 @@ function Register() {
                 )}
 
                 <form onSubmit={registerUser}>
-
                     <input
                         type="text"
                         name="userName"
@@ -173,13 +179,9 @@ function Register() {
                         <Link to="/login"> Login</Link>
                     </div>
                 </form>
-
             </div>
-
         </div>
-
     );
-
 }
 
 export default Register;

@@ -6,7 +6,8 @@ const AppConstants = {
 
     USER_SERVICE: {
         REGISTER_API: "http://localhost:8081/userservice/create",
-        CHANGE_PASSWORD: "http://localhost:8081/userservice/updatePassword"
+        CHANGE_PASSWORD: "http://localhost:8081/userservice/updatePassword",
+        GET_USERNAME: "http://localhost:8081/userservice/getUserName/"
     },
 
     ACCOUNT_SERVICE: {

@@ -1,0 +1,144 @@
+/* ==========================
+   Background
+========================== */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #0f4c81 0%,
+        #1565C0 40%,
+        #42a5f5 100%
+    );
+}
+
+/* ==========================
+   Container
+========================== */
+
+.profile-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* ==========================
+   Profile Card
+========================== */
+
+.profile-box {
+    width: 100%;
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    padding: 45px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.profile-box h2 {
+    text-align: center;
+    color: #1565C0;
+    font-size: 42px;
+    margin-bottom: 35px;
+}
+
+/* ==========================
+   Profile Details
+========================== */
+
+.profile-row {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+/* Left Column */
+
+.profile-label {
+    width: 220px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Middle Colon */
+
+.profile-colon {
+    width: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Right Column */
+
+.profile-value {
+    flex: 1;
+    font-size: 18px;
+    color: #1565C0;
+    word-break: break-word;
+}
+
+/* ==========================
+   Button
+========================== */
+
+.profile-btn {
+    width: 100%;
+    margin-top: 35px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1565C0, #0D47A1);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================
+   Mobile Responsive
+========================== */
+
+@media (max-width: 768px) {
+
+    .profile-box {
+        padding: 30px;
+    }
+
+    .profile-box h2 {
+        font-size: 32px;
+    }
+
+    .profile-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .profile-label,
+    .profile-colon,
+    .profile-value {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .profile-colon {
+        display: none;
+    }
+}

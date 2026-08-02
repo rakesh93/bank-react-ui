@@ -6,11 +6,7 @@ function UserNameDetail() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const message = location.state?.message || "";
-
-    // Extract username from the message
-    const match = message.match(/UserName is (\w+)/);
-    const userName = match ? match[1] : "";
+    const userName = location.state?.message || "";
 
     return (
         <div className="username-page">

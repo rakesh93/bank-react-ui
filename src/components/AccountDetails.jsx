@@ -10,7 +10,7 @@ function AccountDetails() {
     const account = location.state?.result;
 
     const logout = () => {
-        navigate("/login");
+        navigate("/account-search");
     };
     
     if (!account) {

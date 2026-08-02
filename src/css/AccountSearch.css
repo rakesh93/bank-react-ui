@@ -2,236 +2,174 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Segoe UI, sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
     background:linear-gradient(135deg,#0F4C81,#1565C0,#42A5F5);
 }
 
+/* ---------------- Main Container ---------------- */
+
 .search-container{
-
     min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
+    padding:30px 40px;
 }
 
+/* ---------------- Header ---------------- */
+
+.dashboard-header {
+    position: relative;
+    width: 100%;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-user {
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile-section{
+    position:absolute;
+    right:40px;
+    top:20px;
+}
+
+.profile-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    color:white;
+}
+
+.profile-icon{
+    font-size:45px;
+}
+
+.profile-name{
+    font-size:18px;
+    font-weight:600;
+}
+
+.arrow{
+    font-size:12px;
+}
+
+.profile-info:hover{
+    color:#FFD54F;
+}
+
+.profile-dropdown{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:220px;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    overflow:hidden;
+    z-index:1000;
+}
+
+.profile-dropdown div{
+    padding:15px 20px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.profile-dropdown div:hover{
+    background:#1565C0;
+    color:#fff;
+}
+
+/* ---------------- Search Card ---------------- */
+
 .search-box{
-
     width:100%;
-    max-width:500px;
+    max-width:520px;
+    margin:40px auto 0;
 
-    background:white;
-
-    padding:40px;
-
+    background:#fff;
     border-radius:20px;
+    padding:40px;
 
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 
     text-align:center;
 }
 
-.bank-logo{
-
-    font-size:70px;
-
-    margin-bottom:15px;
-}
-
 .search-box h2{
-
     color:#0D47A1;
-
-    margin-bottom:10px;
-
-    font-size:32px;
-}
-
-.subtitle{
-
-    color:#777;
-
-    margin-bottom:30px;
+    font-size:34px;
+    margin-bottom:25px;
 }
 
 .search-box input{
-
     width:100%;
-
     padding:15px;
-
-    border-radius:10px;
-
     border:1px solid #ccc;
-
-    font-size:17px;
-
+    border-radius:10px;
     outline:none;
-
+    font-size:17px;
     margin-bottom:25px;
 }
 
 .search-box input:focus{
-
     border-color:#1565C0;
-
-    box-shadow:0 0 10px rgba(21,101,192,.3);
+    box-shadow:0 0 8px rgba(21,101,192,.25);
 }
 
 .search-box button{
-
     width:100%;
-
     padding:15px;
-
     border:none;
-
     border-radius:10px;
-
-    font-size:18px;
-
-    color:white;
-
-    cursor:pointer;
-
     background:linear-gradient(90deg,#0D47A1,#1976D2);
-
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
     transition:.3s;
 }
 
 .search-box button:hover{
-
     transform:translateY(-2px);
-
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
-/* Mobile */
+.divider{
+    margin:25px 0;
+    border:none;
+    border-top:1px solid #ddd;
+}
 
-@media(max-width:480px){
+/* ---------------- Mobile ---------------- */
+
+@media(max-width:768px){
+
+    .dashboard-header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .welcome-user{
+        text-align:center;
+        font-size:28px;
+    }
+
+    .profile-section{
+        align-self:flex-end;
+    }
 
     .search-box{
-
-        padding:25px;
+        margin-top:20px;
+        padding:30px;
     }
-
-    .search-box h2{
-
-        font-size:24px;
-    }
-
-    .bank-logo{
-
-        font-size:55px;
-    }
-
-    .search-box input{
-
-        font-size:15px;
-    }
-
-    .search-box button{
-
-        font-size:16px;
-    }
-}
-
-/* Top Bar */
-
-.top-bar{
-
-    position:absolute;
-
-    top:25px;
-
-    right:30px;
-}
-
-/* Logout Button */
-
-.logout-btn{
-
-    background:#d32f2f;
-
-    color:white;
-
-    border:none;
-
-    padding:10px 20px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.logout-btn:hover{
-
-    background:#b71c1c;
-
-    transform:translateY(-2px);
-}
-
-.create-btn {
-    margin-top: 20px;
-}
-
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.search-container {
-    position: relative;
-    min-height: 100vh;
-}
-
-.welcome-user {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-
-    z-index: 1000;
-}
-
-.top-bar {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-}
-
-.logout-btn {
-    background: #e53935;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
 }

@@ -3,29 +3,30 @@ import { useNavigate } from "react-router-dom";
 import "../css/AccountSearch.css";
 import Login from "./Login";
 import AppConstants from "../config/AppConstants.js";
+import { FaUserCircle } from "react-icons/fa";
 
 function AccountSearch() {
 
     const [accountNumber, setAccountNumber] = useState("");
     const [username, setUsername] = useState("");
     const navigate = useNavigate();
-
-    const logout = () => {
-        navigate("/login");
-    };
+    const [showMenu, setShowMenu] = useState(false);
+    const [message, setMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         setUsername(localStorage.getItem("username"));
     }, []);
-    const handleSearch = async () => {
-
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        setMessage("");
+        setErrorMessage("");
         if (accountNumber.trim() === "") {
-            alert("Please enter Account Number");
+            setErrorMessage("Please enter Account Number");
             return;
         }
 
         try {
-
             const response = await fetch(AppConstants.ACCOUNT_SERVICE.SEARCH_API + accountNumber
                 ,
                 {
@@ -35,50 +36,92 @@ function AccountSearch() {
                     }
                 }
             );
-
             const data = await response.json();
-
             console.log("API Response :", data);
-
             if (response.ok && data.statusCode === 200) {
-
                 navigate("/account-details", {
                     state: data
                 });
 
             } else {
-                alert(data.message || "Account Not Found");
+                setErrorMessage(data.message);
+                setTimeout(() => {
+                    setAccountNumber("");
+                    setErrorMessage("");
+                }, 3000);
             }
 
         } catch (error) {
-            console.error(error);
-            alert("Unable to connect to server.");
+            setErrorMessage(AppConstants.ERROR_MESSAGES.SERVER_DOWN);
+            setTimeout(() => {
+                setAccountNumber("");
+                setErrorMessage("");
+            }, 3000);
         }
-
     };
 
     return (
 
         <div className="search-container">
-            <div className="welcome-user">
-                👋 Welcome, {username}
-            </div>
-            <div className="top-bar">
+            <div className="dashboard-header">
 
-                <button className="logout-btn" onClick={logout}>
-                    🚪 Logout
-                </button>
+                <div className="welcome-user">
+                    👋 Welcome to iLearn Bank Service
+                </div>
+
+                <div className="profile-section">
+
+                    <div
+                        className="profile-info"
+                        onClick={() => setShowMenu(!showMenu)}
+                    >
+                        <FaUserCircle className="profile-icon" />
+
+                        <span className="profile-name">
+                            {username}
+                        </span>
+
+                        <span className="arrow">
+                            ▼
+                        </span>
+                    </div>
+
+                    {showMenu && (
+                        <div className="profile-dropdown">
+                            <div onClick={() => navigate("/user-profile")}>👤 My Profile</div>
+                            <div onClick={() => navigate("/update-profile")}>✏️ Update Profile</div>
+                            <div onClick={() => navigate("/change-password")}>🔒 Change Password</div>
+                            <div onClick={() => navigate("/login")}>🚪 Logout</div>
+                        </div>
+                    )}
+                </div>
 
             </div>
             <div className="search-box">
 
                 <h2>🏦 Bank Account Search</h2>
+                {message && (
+                    <div className="success-message">
+                        {message}
+                    </div>
+                )}
+
+                {errorMessage && (
+                    <div className="error-message">
+                        {errorMessage}
+                    </div>
+                )}
 
                 <input
                     type="text"
-                    placeholder="Enter Account Number"
+                    id="accountNumber"
                     value={accountNumber}
-                    onChange={(e) => setAccountNumber(e.target.value)}
+                    placeholder="Please Enter Account Number"
+                    maxLength={10}
+                    onChange={(e) =>
+                        setAccountNumber(e.target.value.replace(/\D/g, ""))
+                    }
+                    required
                 />
 
                 <button onClick={handleSearch}>

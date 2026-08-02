@@ -7,6 +7,7 @@ import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
 import ForgotUserName from "./components/ForgotUserName";
 import UserNameDetail from "./components/UserNameDetail";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/forgot-password"  element={<ForgotPassword />} />
         <Route path="/forgot-username"  element={<ForgotUserName />} />
         <Route path="/username-detail"  element={<UserNameDetail />} />
+        <Route path="/user-profile"  element={<UserProfile />} />
       </Routes>
     </BrowserRouter>
   );

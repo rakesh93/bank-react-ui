@@ -49,7 +49,7 @@ function ForgotPassword() {
                 }, 3000);
             }
         } catch (error) {
-            setErrorMessage("Server is Down");
+            setErrorMessage(AppConstants.ERROR_MESSAGES.SERVER_DOWN);
         }
     };
     return (

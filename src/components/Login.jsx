@@ -48,6 +48,11 @@ function Login() {
 
         } catch (error) {
             setErrorMessage("Unable to connect to server.");
+            setUsername("");
+            setPassword("");
+            setTimeout(() => {
+                setErrorMessage("");
+            }, 3000);
         }
     };
 

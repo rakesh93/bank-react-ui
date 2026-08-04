@@ -101,7 +101,7 @@ body {
 
 .eye-icon {
     position: absolute;
-    top: 70%;
+    top: 60%;
     right: 15px;
     transform: translateY(-50%);
     cursor: pointer;

@@ -5,7 +5,7 @@ import Login from "./Login";
 
 function AccountDetails() {
 
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
     const location = useLocation();
     const account = location.state?.result;
 

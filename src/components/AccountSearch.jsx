@@ -17,6 +17,7 @@ function AccountSearch() {
     useEffect(() => {
         setUsername(localStorage.getItem("username"));
     }, []);
+
     const handleSearch = async (e) => {
         e.preventDefault();
         setMessage("");
@@ -89,13 +90,13 @@ function AccountSearch() {
                     {showMenu && (
                         <div className="profile-dropdown">
                             <div onClick={() => navigate("/user-profile")}>👤 My Profile</div>
-                            <div onClick={() => navigate("/update-profile")}>✏️ Update Profile</div>
+                            <div onClick={() => navigate("/update-profile", {
+                                    state: { username: localStorage.getItem("username")}})}>✏️ Update Profile</div>
                             <div onClick={() => navigate("/change-password")}>🔒 Change Password</div>
                             <div onClick={() => navigate("/login")}>🚪 Logout</div>
                         </div>
                     )}
                 </div>
-
             </div>
             <div className="search-box">
 
@@ -142,7 +143,4 @@ function AccountSearch() {
         </div>
     );
 }
-
-
-
 export default AccountSearch;

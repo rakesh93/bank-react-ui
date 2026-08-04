@@ -13,14 +13,7 @@ function UserProfile() {
     }, []);
 
     const loadProfile = async () => {
-
         const username = localStorage.getItem("username");
-
-        console.log("Username :", username);
-
-        const url = AppConstants.USER_SERVICE.PROFILE_FETCH + username;
-
-        console.log("URL :", url);
         try {
 
             const response = await fetch(
@@ -46,7 +39,7 @@ function UserProfile() {
                 <h2>👤 My Profile</h2>
 
                 <div className="profile-row">
-                    <span className="profile-label">UserName</span>
+                    <span className="profile-label">User Name</span>
                     <span className="profile-value">{profile.userName}</span>
                 </div>
 

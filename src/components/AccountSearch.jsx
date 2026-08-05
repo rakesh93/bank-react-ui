@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/AccountSearch.css";
-import Login from "./Login";
 import AppConstants from "../config/AppConstants.js";
 import { FaUserCircle } from "react-icons/fa";
 
@@ -92,7 +91,8 @@ function AccountSearch() {
                             <div onClick={() => navigate("/user-profile")}>👤 My Profile</div>
                             <div onClick={() => navigate("/update-profile", {
                                     state: { username: localStorage.getItem("username")}})}>✏️ Update Profile</div>
-                            <div onClick={() => navigate("/change-password")}>🔒 Change Password</div>
+                            <div onClick={() => navigate("/change-password", {
+                                    state: { username: localStorage.getItem("username")}})}>🔒 Change Password</div>
                             <div onClick={() => navigate("/login")}>🚪 Logout</div>
                         </div>
                     )}

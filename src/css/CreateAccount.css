@@ -197,3 +197,23 @@ body {
     }
 
 }
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #1b5ebd;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    margin-bottom: 25px;
+
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #0d47a1;
+    transform: translateX(-3px);
+}

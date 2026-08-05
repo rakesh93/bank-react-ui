@@ -1,8 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/CreateAccount.css";
 import AppConstants from "../config/AppConstants.js";
+import { FaArrowLeft } from "react-icons/fa";
+
 
 function CreateAccount() {
+
+    const navigate = useNavigate();
+    const [message] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const [account, setAccount] = useState({
         firstName: "",
@@ -38,14 +45,21 @@ function CreateAccount() {
 
             const data = await response.json();
 
-            if (response.ok) {
-                alert(data.message);
+            if (data.statusCode === 200) {
+                setErrorMessage(data.message);
+                setTimeout(() => {
+                    navigate("/account-search");
+                }, 3000);
+
             } else {
-                alert(data.message);
+                setErrorMessage(data.message);
+                setTimeout(() => {
+                    setErrorMessage("");
+                }, 3000);
             }
 
         } catch (error) {
-            alert("Server Error");
+            setErrorMessage(AppConstants.ERROR_MESSAGES.SERVER_DOWN);
         }
 
     };
@@ -56,7 +70,13 @@ function CreateAccount() {
 
             <form className="create-box" onSubmit={createAccount}>
 
+                {<div className="back-link" onClick={() => navigate("/account-search")}>  ← Back  </div>}
+
                 <h2>Create Bank Account</h2>
+
+                {message && (<div className="success-message">{message} </div>)}
+
+                {errorMessage && (<div className="error-message">{errorMessage} </div>)}
 
                 <input
                     type="text"

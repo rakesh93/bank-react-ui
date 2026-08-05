@@ -9,6 +9,7 @@ import ForgotUserName from "./components/ForgotUserName";
 import UserNameDetail from "./components/UserNameDetail";
 import UserProfile from "./components/UserProfile";
 import UpdateUserProfile from "./components/UpdateUserProfile";
+import PasswordChange from "./components/PasswordChange";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/username-detail"  element={<UserNameDetail />} />
         <Route path="/user-profile"  element={<UserProfile />} />
         <Route path="/update-profile"  element={<UpdateUserProfile />} />
+        <Route path="/change-password"  element={<PasswordChange />} />
       </Routes>
     </BrowserRouter>
   );

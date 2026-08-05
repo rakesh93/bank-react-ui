@@ -1,7 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "../css/AccountDetails.css";
-import Login from "./Login";
-
 
 function AccountDetails() {
 
@@ -12,7 +10,7 @@ function AccountDetails() {
     const logout = () => {
         navigate("/account-search");
     };
-    
+
     if (!account) {
         return <h2>No Account Details Found</h2>;
     }
@@ -20,13 +18,9 @@ function AccountDetails() {
     return (
 
         <div className="details-container">
-            <div className="top-bar">
 
-                <button className="logout-btn" onClick={logout}>
-                    🚪 Logout
-                </button>
+            <button className="logout-btn" onClick={logout}>🚪 Logout</button>
 
-            </div>
             <div className="details-card">
 
                 <div className="card-header">
@@ -74,6 +68,11 @@ function AccountDetails() {
                             </tr>
 
                             <tr>
+                                <td>Available Balance</td>
+                                <td>₹ {account.availBalance?.toFixed(2)}</td>
+                            </tr>
+
+                            <tr>
                                 <td>Status</td>
                                 <td>
                                     <span className={account.isActive ? "active" : "inactive"}>
@@ -87,8 +86,6 @@ function AccountDetails() {
                     </table>
 
                     <div className="action-buttons">
-
-                        <button>Balance Check</button>
 
                         <button>Deposit</button>
 

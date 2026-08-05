@@ -1,20 +1,25 @@
+const USER_SERVICE_BASE_URL = "http://localhost:8081/userservice/";
+const ACCOUNT_SERVICE_BASE_URL = "http://localhost:8083/accountservice/";
+const AUTH_SERVICE_BASE_URL = "http://localhost:8082/authservice/";
+
 const AppConstants = {
 
     AUTH_SERVICE: {
-        LOGIN_URL: "http://localhost:8082/authservice/login"
+        LOGIN_URL: AUTH_SERVICE_BASE_URL + "login"
     },
 
     USER_SERVICE: {
-        REGISTER_API: "http://localhost:8081/userservice/create",
-        CHANGE_PASSWORD: "http://localhost:8081/userservice/updateForgotPassword",
-        GET_USERNAME: "http://localhost:8081/userservice/getUserName/",
-        PROFILE_FETCH: "http://localhost:8081/userservice/getProfile/",
-        PROFILE_UPDATE: "http://localhost:8081/userservice/updateProfile/"
+        REGISTER_API: USER_SERVICE_BASE_URL + "create",
+        CHANGE_PASSWORD: USER_SERVICE_BASE_URL + "updateForgotPassword",
+        GET_USERNAME: USER_SERVICE_BASE_URL + "getUserName/",
+        PROFILE_FETCH: USER_SERVICE_BASE_URL + "getProfile/",
+        PROFILE_UPDATE: USER_SERVICE_BASE_URL + "updateProfile/",
+        NEW_PASSWORD_CHANGE: USER_SERVICE_BASE_URL + "updateNewPassword/"
     },
 
     ACCOUNT_SERVICE: {
-        SEARCH_API: "http://localhost:8083/accountservice/getAccount/",
-        CREATE_API: "http://localhost:8083/accountservice/createAccount"
+        SEARCH_API: ACCOUNT_SERVICE_BASE_URL + "getAccount/",
+        CREATE_API: ACCOUNT_SERVICE_BASE_URL + "createAccount"
     },
 
     ERROR_MESSAGES: {

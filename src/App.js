@@ -10,6 +10,8 @@ import UserNameDetail from "./components/UserNameDetail";
 import UserProfile from "./components/UserProfile";
 import UpdateUserProfile from "./components/UpdateUserProfile";
 import PasswordChange from "./components/PasswordChange";
+import AccountDeposit from "./components/AccountDeposit";
+import AccountWithdraw from "./components/AccountWithdraw";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/user-profile"  element={<UserProfile />} />
         <Route path="/update-profile"  element={<UpdateUserProfile />} />
         <Route path="/change-password"  element={<PasswordChange />} />
+        <Route path="/account-deposit" element={<AccountDeposit/>} />
+        <Route path="/account-withdraw" element={<AccountWithdraw/>} />
       </Routes>
     </BrowserRouter>
   );

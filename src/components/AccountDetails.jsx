@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "../css/AccountDetails.css";
 
 function AccountDetails() {
@@ -87,13 +87,33 @@ function AccountDetails() {
 
                     <div className="action-buttons">
 
-                        <button>Deposit</button>
+                        <Link
+                            to="/account-deposit"
+                            state={{ result: account }}
+                        >
+                            <button>Deposit</button>
+                        </Link>
 
-                        <button>Withdraw</button>
+                        <Link
+                            to="/account-withdraw"
+                            state={{ result: account }}
+                        >
+                            <button>Withdraw</button>
+                        </Link>
 
-                        <button>Transfer</button>
+                        <Link
+                            to="/transfer"
+                            state={{ result: account }}
+                        >
+                            <button>Transfer</button>
+                        </Link>
 
-                        <button>Transactions</button>
+                        <Link
+                            to="/transactions"
+                            state={{ result: account }}
+                        >
+                            <button>Transactions</button>
+                        </Link>
 
                     </div>
 

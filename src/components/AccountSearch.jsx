@@ -38,7 +38,7 @@ function AccountSearch() {
             );
             const data = await response.json();
             console.log("API Response :", data);
-            if (response.ok && data.statusCode === 200) {
+            if (data.statusCode === 200) {
                 navigate("/account-details", {
                     state: data
                 });

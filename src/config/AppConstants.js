@@ -1,6 +1,7 @@
 const USER_SERVICE_BASE_URL = "http://localhost:8081/userservice/";
 const ACCOUNT_SERVICE_BASE_URL = "http://localhost:8083/accountservice/";
 const AUTH_SERVICE_BASE_URL = "http://localhost:8082/authservice/";
+const TRANSACTION_SERVICE_BASE_URL = "http://localhost:8084/transactionservice/";
 
 const AppConstants = {
 
@@ -22,10 +23,17 @@ const AppConstants = {
         CREATE_API: ACCOUNT_SERVICE_BASE_URL + "createAccount"
     },
 
+    TRANSACTION_SERVICE: {
+        DEPOSIT_API: TRANSACTION_SERVICE_BASE_URL + "deposit/",
+        WITHDRAW_API: TRANSACTION_SERVICE_BASE_URL + "withdraw/",
+        TRANSFER_API: TRANSACTION_SERVICE_BASE_URL + "transfer",
+        TRANSACTION_HISTORY_API: TRANSACTION_SERVICE_BASE_URL + "transactionHistory/"
+    },
+
     ERROR_MESSAGES: {
         SERVER_DOWN: "Server is Down.Please try again later."
     }
-    
+
 };
 
 export default AppConstants;

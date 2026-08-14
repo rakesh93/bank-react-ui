@@ -12,6 +12,8 @@ import UpdateUserProfile from "./components/UpdateUserProfile";
 import PasswordChange from "./components/PasswordChange";
 import AccountDeposit from "./components/AccountDeposit";
 import AccountWithdraw from "./components/AccountWithdraw";
+import TransferBalance from "./components/TransferBalance";
+import TransactionList from "./components/TransactionList";
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
         <Route path="/change-password"  element={<PasswordChange />} />
         <Route path="/account-deposit" element={<AccountDeposit/>} />
         <Route path="/account-withdraw" element={<AccountWithdraw/>} />
+        <Route path="/transfer" element={<TransferBalance/>} />
+        <Route path="/transactionList" element={<TransactionList/>} />
+        
       </Routes>
     </BrowserRouter>
   );

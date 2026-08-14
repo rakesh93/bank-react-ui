@@ -1,0 +1,221 @@
+/* ==========================
+   Global
+========================== */
+
+.transfer-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #0f4c81 0%,
+        #1565C0 45%,
+        #42a5f5 100%
+    );
+}
+
+/* ==========================
+   Transfer Card
+========================== */
+
+.transfer-box {
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================
+   Heading
+========================== */
+
+.transfer-box h2 {
+    text-align: center;
+
+    color: #1565C0;
+
+    font-size: 34px;
+
+    margin-bottom: 30px;
+}
+
+/* ==========================
+   Form
+========================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+
+    height: 55px;
+
+    padding: 0 15px;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #1565C0;
+
+    box-shadow:
+        0 0 8px rgba(21, 101, 192, 0.35);
+}
+
+/* ==========================
+   Readonly Account
+========================== */
+
+.readonly-input {
+    background: #eeeeee;
+
+    color: #555;
+
+    cursor: not-allowed;
+}
+
+/* ==========================
+   Submit Button
+========================== */
+
+.transfer-box button {
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #1565C0,
+        #0D47A1
+    );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.transfer-box button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.transfer-box button:disabled {
+    background: #b0b0b0;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+/* ==========================
+   Messages
+========================== */
+
+.success-message {
+    background: #2e7d32;
+
+    color: white;
+
+    padding: 14px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.error-message {
+    background: #d32f2f;
+
+    color: white;
+
+    padding: 14px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 600px) {
+
+    .transfer-container {
+        padding: 15px;
+    }
+
+    .transfer-box {
+        padding: 25px;
+    }
+
+    .transfer-box h2 {
+        font-size: 28px;
+    }
+
+    .form-group input {
+        height: 50px;
+    }
+
+    .transfer-box button {
+        height: 50px;
+        font-size: 16px;
+    }
+}

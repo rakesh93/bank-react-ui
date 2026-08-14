@@ -1,0 +1,456 @@
+/* ==========================
+   Container
+========================== */
+
+.transaction-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #0f4c81 0%,
+        #1565C0 45%,
+        #42a5f5 100%
+    );
+}
+
+
+/* ==========================
+   Transaction Card
+========================== */
+
+.transaction-box {
+    width: 100%;
+    max-width: 1100px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================
+   Heading
+========================== */
+
+.transaction-box h2 {
+    text-align: center;
+
+    color: #1565C0;
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================
+   Account Information
+========================== */
+
+.account-info {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f4f8ff;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+}
+
+.account-info span {
+    color: #555;
+}
+
+.account-info strong {
+    color: #1565C0;
+}
+
+
+/* ==========================
+   Table Container
+========================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* ==========================
+   Transaction Table
+========================== */
+
+.transaction-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 15px;
+
+    /* Important:
+       This makes browser respect
+       the column widths below.
+    */
+    table-layout: fixed;
+}
+
+
+/* ==========================
+   Column Widths
+========================== */
+
+/* TransID - Small */
+
+.transaction-table th:nth-child(1),
+.transaction-table td:nth-child(1) {
+    width: 20%;
+}
+
+
+/* Transaction Type */
+
+.transaction-table th:nth-child(2),
+.transaction-table td:nth-child(2) {
+    width: 20%;
+}
+
+
+/* Amount */
+
+.transaction-table th:nth-child(3),
+.transaction-table td:nth-child(3) {
+    width: 14%;
+}
+
+
+/* Balance */
+
+.transaction-table th:nth-child(4),
+.transaction-table td:nth-child(4) {
+    width: 20%;
+}
+
+
+/* Transaction Date - More Space */
+
+.transaction-table th:nth-child(5),
+.transaction-table td:nth-child(5) {
+    width: 44%;
+}
+
+
+/* ==========================
+   Table Header
+========================== */
+
+.transaction-table th {
+    background: #1565C0;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    font-size: 16px;
+}
+
+
+/* ==========================
+   Table Body
+========================== */
+
+.transaction-table td {
+    padding: 14px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ==========================
+   Row Hover
+========================== */
+
+.transaction-table tbody tr:hover {
+    background: #f4f8ff;
+}
+
+
+/* ==========================
+   Transaction ID
+========================== */
+
+.transaction-table td:first-child {
+    color: #1565C0;
+
+    font-weight: bold;
+
+    font-size: 17px;
+}
+
+
+/* ==========================
+   Transaction Type
+========================== */
+
+.transaction-type {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================
+   Deposit
+========================== */
+
+.transaction-type.deposit {
+    background: #e8f5e9;
+
+    color: #2e7d32;
+}
+
+
+/* ==========================
+   Withdraw
+========================== */
+
+.transaction-type.withdraw {
+    background: #ffebee;
+
+    color: #c62828;
+}
+
+
+/* ==========================
+   Transfer In
+========================== */
+
+.transaction-type.transfer_in {
+    background: #e3f2fd;
+
+    color: #1565C0;
+}
+
+
+/* ==========================
+   Transfer Out
+========================== */
+
+.transaction-type.transfer_out {
+    background: #fff3e0;
+
+    color: #ef6c00;
+}
+
+
+/* ==========================
+   Amount
+========================== */
+
+.amount {
+    font-weight: bold;
+
+    color: #1565C0;
+
+    font-size: 17px;
+}
+
+
+/* ==========================
+   Balance
+========================== */
+
+.transaction-table td:nth-child(4) {
+    color: #222;
+
+    font-size: 16px;
+}
+
+
+/* ==========================
+   Transaction Date
+========================== */
+
+.transaction-table td:nth-child(5) {
+    font-size: 14px;
+
+    color: #333;
+}
+
+
+/* ==========================
+   Loading
+========================== */
+
+.loading-message {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* ==========================
+   No Data
+========================== */
+
+.no-data {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* ==========================
+   Error Message
+========================== */
+
+.error-message {
+    background: #d32f2f;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+    .transaction-container {
+        padding: 15px;
+    }
+
+    .transaction-box {
+        padding: 25px 15px;
+
+        border-radius: 15px;
+    }
+
+    .transaction-box h2 {
+        font-size: 27px;
+
+        margin-bottom: 20px;
+    }
+
+    .account-info {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 5px;
+
+        font-size: 15px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .transaction-table {
+        min-width: 800px;
+
+        font-size: 13px;
+    }
+
+    .transaction-table th,
+    .transaction-table td {
+        padding: 10px;
+    }
+
+    .transaction-table th {
+        font-size: 14px;
+    }
+
+    .transaction-type {
+        padding: 5px 9px;
+
+        font-size: 12px;
+    }
+
+    .amount {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================
+   Small Mobile
+========================== */
+
+@media (max-width: 480px) {
+
+    .transaction-container {
+        padding: 10px;
+    }
+
+    .transaction-box {
+        padding: 20px 10px;
+    }
+
+    .transaction-box h2 {
+        font-size: 23px;
+    }
+
+    .account-info {
+        font-size: 14px;
+
+        padding: 12px;
+    }
+}

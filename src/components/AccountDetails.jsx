@@ -109,7 +109,7 @@ function AccountDetails() {
                         </Link>
 
                         <Link
-                            to="/transactions"
+                            to="/transactionList"
                             state={{ result: account }}
                         >
                             <button>Transactions</button>

@@ -24,7 +24,8 @@ function ChangePassword() {
         setErrorMessage("");
 
         const username = localStorage.getItem("username");
-
+        const token = localStorage.getItem("token");
+        
         const request = {
             oldPassword,
             newPassword
@@ -36,7 +37,8 @@ function ChangePassword() {
                 {
                     method: "PATCH",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     },
                     body: JSON.stringify(request)
                 }

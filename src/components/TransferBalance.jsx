@@ -9,16 +9,14 @@ function TransferBalance() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [fromAccountNumber, setFromAccountNumber] = useState("");
     const [toAccountNumber, setToAccountNumber] = useState("");
     const [amount, setAmount] = useState("");
-
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
     const account = location.state?.result;
-
+    const token = localStorage.getItem("token");
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -46,7 +44,8 @@ function TransferBalance() {
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     },
                     body: JSON.stringify(transferRequest)
                 }

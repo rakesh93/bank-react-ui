@@ -10,6 +10,7 @@ function CreateAccount() {
     const navigate = useNavigate();
     const [message] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const token = localStorage.getItem("token");
 
     const [account, setAccount] = useState({
         firstName: "",
@@ -37,7 +38,8 @@ function CreateAccount() {
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     },
                     body: JSON.stringify(account)
                 }

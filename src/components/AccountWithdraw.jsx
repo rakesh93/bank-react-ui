@@ -15,6 +15,7 @@ function AccountWithdraw() {
     const [error, setError] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [loading, setLoading] = useState(false);
+    const token = localStorage.getItem("token");
 
     if (!account) {
         return (
@@ -45,7 +46,8 @@ function AccountWithdraw() {
                 {
                     method: "PATCH",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     },
                     body: JSON.stringify({
                         amount: amount

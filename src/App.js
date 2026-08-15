@@ -6,7 +6,7 @@ import AccountDetails from "./components/AccountDetails";
 import CreateAccount from "./components/CreateAccount";
 import ForgotPassword from "./components/ForgotPassword";
 import ForgotUserName from "./components/ForgotUserName";
-import UserNameDetail from "./components/UserNameDetail";
+import ForgotUserNameDetail from "./components/ForgotUserNameDetail";
 import UserProfile from "./components/UserProfile";
 import UpdateUserProfile from "./components/UpdateUserProfile";
 import PasswordChange from "./components/PasswordChange";
@@ -27,7 +27,7 @@ function App() {
         <Route path="/create-account"  element={<CreateAccount />} />
         <Route path="/forgot-password"  element={<ForgotPassword />} />
         <Route path="/forgot-username"  element={<ForgotUserName />} />
-        <Route path="/username-detail"  element={<UserNameDetail />} />
+        <Route path="/username-detail"  element={<ForgotUserNameDetail />} />
         <Route path="/user-profile"  element={<UserProfile />} />
         <Route path="/update-profile"  element={<UpdateUserProfile />} />
         <Route path="/change-password"  element={<PasswordChange />} />

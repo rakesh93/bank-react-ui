@@ -10,7 +10,7 @@ function TransactionList() {
     const location = useLocation();
 
     const account = location.state?.result;
-
+    const token = localStorage.getItem("token");
     const [transactions, setTransactions] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
     const [loading, setLoading] = useState(false);
@@ -32,7 +32,13 @@ function TransactionList() {
 
             const response = await fetch(
                 AppConstants.TRANSACTION_SERVICE.TRANSACTION_HISTORY_API
-                + account.accountNumber
+                + account.accountNumber,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
             );
 
             const data = await response.json();

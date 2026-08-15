@@ -7,6 +7,7 @@ function UserProfile() {
 
     const navigate = useNavigate();
     const [profile, setProfile] = useState({});
+    const token = localStorage.getItem("token");
 
     useEffect(() => {
         loadProfile();
@@ -17,7 +18,13 @@ function UserProfile() {
         try {
 
             const response = await fetch(
-                AppConstants.USER_SERVICE.PROFILE_FETCH + username
+                AppConstants.USER_SERVICE.PROFILE_FETCH + username,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
             );
 
             const data = await response.json();

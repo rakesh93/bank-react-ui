@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { FaUserCircle, FaArrowLeft } from "react-icons/fa";
 import "../css/UserNameDetail.css";
 
-function UserNameDetail() {
+function ForgotUserNameDetail() {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ function UserNameDetail() {
     );
 }
 
-export default UserNameDetail;
+export default ForgotUserNameDetail;

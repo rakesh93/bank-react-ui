@@ -12,6 +12,7 @@ function AccountSearch() {
     const [showMenu, setShowMenu] = useState(false);
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const token = localStorage.getItem("token");
 
     useEffect(() => {
         setUsername(localStorage.getItem("username"));
@@ -32,7 +33,8 @@ function AccountSearch() {
                 {
                     method: "GET",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     }
                 }
             );

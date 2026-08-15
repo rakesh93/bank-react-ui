@@ -1,7 +1,9 @@
-const USER_SERVICE_BASE_URL = "http://localhost:8081/userservice/";
-const ACCOUNT_SERVICE_BASE_URL = "http://localhost:8083/accountservice/";
-const AUTH_SERVICE_BASE_URL = "http://localhost:8082/authservice/";
-const TRANSACTION_SERVICE_BASE_URL = "http://localhost:8084/transactionservice/";
+const APP_BASE_URL = "http://localhost:9090/"
+const USER_SERVICE_BASE_URL = APP_BASE_URL + "userservice/";
+const ACCOUNT_SERVICE_BASE_URL = APP_BASE_URL + "accountservice/";
+const AUTH_SERVICE_BASE_URL = APP_BASE_URL + "authservice/";
+const TRANSACTION_SERVICE_BASE_URL = APP_BASE_URL + "transactionservice/";
+
 
 const AppConstants = {
 

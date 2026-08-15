@@ -10,7 +10,8 @@ function UpdateUserProfile() {
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const username = location.state?.username;
-
+    const token = localStorage.getItem("token");
+    
     const [profile, setProfile] = useState({
         username: "",
         firstName: "",
@@ -29,7 +30,13 @@ function UpdateUserProfile() {
 
         try {
             const response = await fetch(
-                AppConstants.USER_SERVICE.PROFILE_FETCH + username
+                AppConstants.USER_SERVICE.PROFILE_FETCH + username,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
             );
 
             const data = await response.json();
@@ -62,7 +69,8 @@ function UpdateUserProfile() {
                 {
                     method: "PUT",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     },
                     body: JSON.stringify(profile)
                 }

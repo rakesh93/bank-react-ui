@@ -35,6 +35,7 @@ function Login() {
             const data = await response.json();
 
             if (data.statusCode === 200) {
+                localStorage.setItem("token", data.token);
                 localStorage.setItem("username", username);
                 navigate("/account-search");
             } else {
